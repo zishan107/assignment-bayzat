@@ -1,6 +1,6 @@
 package com.bayzdelivery.jobs;
 
-import com.bayzdelivery.models.Delivery;
+import com.bayzdelivery.model.Delivery;
 import com.bayzdelivery.repositories.DeliveryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
