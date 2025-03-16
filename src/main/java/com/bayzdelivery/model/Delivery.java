@@ -15,7 +15,7 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 @Table(name = "delivery")
 public class Delivery implements Serializable {
-
+    
     private static final long serialVersionUID = 123765351514001L;
 
     @Id
