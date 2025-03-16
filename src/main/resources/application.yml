@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/bayzdelivery
-    username: db_user
-    password: 123qwe
+    url: jdbc:postgresql://localhost:3306/admin
+    username: root
+    password: 123Root123qwe
     driver-class-name: org.postgresql.Driver
   jpa:
     open-in-view: false

@@ -22,7 +22,12 @@ public class PersonServiceImpl implements PersonService {
         return personList;
     }
 
+    @Override
     public Person save(Person p) {
+        // Validate that a user cannot be both a customer and a delivery man
+        if (!"customer".equals(p.getRole()) && !"delivery_man".equals(p.getRole())) {
+            throw new IllegalArgumentException("Role must be either 'customer' or 'delivery_man'");
+        }
         return personRepository.save(p);
     }
 
