@@ -1,6 +1,7 @@
 package com.bayzdelivery.model;
 
 import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,66 +15,62 @@ import jakarta.validation.constraints.NotNull;
 @Table(name = "person")
 public class Person implements Serializable {
 
-  private static final long serialVersionUID = 432154291451321L;
+    private static final long serialVersionUID = 432154291451321L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
+    @Column(name = "name")
+    String name;
+    @NotNull
+    @Email
+    @Column(name = "email")
+    String email;
+    @Column(name = "registration_number")
+    String registrationNumber;
+    @NotNull
+    @Column(name = "role")
+    String role;
 
-  public Person() {}
+    public Person() {
+    }
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Long id;
+    public Long getId() {
+        return id;
+    }
 
-  @Column(name = "name")
-  String name;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  @NotNull
-  @Email
-  @Column(name = "email")
-  String email;
+    public String getName() {
+        return name;
+    }
 
-  @Column(name = "registration_number")
-  String registrationNumber;
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  @NotNull
-  @Column(name = "role")
-  String role; 
+    public String getEmail() {
+        return email;
+    }
 
-  public Long getId() {
-    return id;
-  }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public String getRole() {
+        return role;
+    }
 
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public String getRegistrationNumber() {
-    return registrationNumber;
-  }
-
-  public void setRegistrationNumber(String registrationNumber) {
-    this.registrationNumber = registrationNumber;
-  }
-
-  public String getRole() {
-    return role;
-  }
-
-  public void setRole(String role) {
-    this.role = role;
-  }
+    public void setRole(String role) {
+      this.role = role;
+    }
 }
